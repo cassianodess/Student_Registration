@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Auxilia com cors -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Formulários</title>
+
+
+    <style>
+        input {
+            /* Mantém em vertical */
+            width: 250px;
+            display: block;
+            margin: 10px 0px;
+            margin-left: 20px
+        }
+
+        form {
+            display: center;
+            align-items: center;
+            width: 300px;
+            padding: 10px;
+            background-color: rgb(154, 224, 197);
+        }
+
+        #btns {
+            /* MAntém em horizontal */
+            width: 200px;
+            display: flex;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            margin-left: 50px;
+        }
+
+        #container {
+
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Teste Front e Back</h1>
+    <div id="container">
+        <form onsubmit="cadastrar(event, this)">
+            <label>
+                <p>Nome</p>
+            </label>
+            <input type="text" name="name">
+            <label>
+                <p>Email</p>
+            </label>
+            <input type="email" name="email">
+            <div id="btns">
+                <input style="margin-right: 20px;" type="submit" value="Enviar" name="btnEnviar">
+                <input type="reset" value="Limpar" name="btnLimpar">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function cadastrar(event, form) {
+            event.preventDefault();
+            axios.post('http://localhost:8080/students', {
+                name: form.name.value,
+                email: form.email.value
+            })
+            form.name.value = ''
+            form.email.value = ''
+        }
+    </script>
+</body>
+
+</html>
