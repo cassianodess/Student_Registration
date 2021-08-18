@@ -1,9 +1,9 @@
-package com.example.demo.Model.Configuration;
+package com.example.demo.model.configuration;
 
 import java.util.List;
 
-import com.example.demo.Model.Student;
-import com.example.demo.Model.Repository.StudentRepository;
+import com.example.demo.model.Student;
+import com.example.demo.model.repository.StudentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

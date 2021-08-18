@@ -1,10 +1,10 @@
-package com.example.demo.Model.Controller;
+package com.example.demo.model.controller;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.example.demo.Model.Student;
-import com.example.demo.Model.Service.StudentService;
+import com.example.demo.model.Student;
+import com.example.demo.model.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.example.demo.Model.Service;
+package com.example.demo.model.service;
 
 public class StudentException extends RuntimeException {
 
